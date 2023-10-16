@@ -1,0 +1,115 @@
+sudo dpkg --install 
+
+pwd
+ls -l
+cd ~/Documents cd ../ cd ~
+touch
+cat > test.txt (redaktirovat) cat test.txt (watch) cat >> text.txt (add) cat < test.txt (delete)
+mkdir
+cp
+mv
+rm folder/* or [/*.txt, /test.*](not folder) rm -rf folder (for folder)
+sudo su (super user do switch user)
+su choidomin
+sudo chown root:choidomin file.txt (change owner)
+sudo chmod 664 file.txt (change mod) 4-r 6-rw 7-all
+
+find . -type f -name "*.txt"  (. find here f-files d-dir, iname- no register, perm 0664)
+find . -type f -perm 0664 -iname "m*.*"
+find . -size +1M (-1M, +100k)
+find - type f -not -name "*.txt"
+cat main.py (info inside)
+grep "print" main.py (find text in file)
+grep -n -i "main" main.py (n-stkore i-not register)
+find . -type f -size -100k -iname "*.cpp" -exec grep -i -n "*.txt" {} + 
+sort file.txt > file_sorted.txt
+sort -n -r text.txt (n-number r-reverse)
+
+top -dispecher zada4
+free -h (pam9lt)
+ps -aux | grep bash (ps-procesoor, aux all users | find bash*)
+tree (fail tree)
+
+tar cf folder.tar test
+tar tf folder.tar(look what inside)
+tar xvf folder.tar
+xz folder.tar
+unxz folder.tar.xz
+gzip folder.tar
+gunzip folder.tar.gz
+bzip2 folder.tar
+bunzip2 foler.tar.bz2
+zip -r folder.zip test
+unzip folder.zip
+tar czf folder.gz test (srazu swat)
+
+
+gedit (bloknot)
+vim
+pico
+nano
+
+wget https://itproger.com/img/tests/python.svg
+ping -c 10 www.google.com
+host google.com (ip adress)
+netstat | grep unix
+ifconfig
+ip iddr show
+route
+ssh name (server connect)
+w (users in server)
+
+//Bash Shell
+set -o (set +o)
+
+nano bash_script.sh
+#!/bin/bash (1 stro4ka v bash file)
+bash bash_script.sh
+
+
+dir=`ls`
+string='Hello' 
+string="Hello: $dir"
+echo "$string $dir"
+
+//if, imput
+read -p "Enter number: " num (-s u can`t see )
+if [ "$num" == 5 ]; then
+	ls
+elif [ "$num" > 10 ]; then
+	echo "number >10"
+else
+	read -p "Enter name:" name
+	echo "$name"
+fi
+echo "$num"
+
+//for
+for (( i=1; i<=10; i++)); do
+	echo "el: $i"
+done
+
+for i in {2..5}; do
+	echo "El: $i"
+done
+
+//while
+i=0
+while [ $i -lt 10]; do (lt <= gt>=)
+	echo "El: $i"
+	i=$(($i+1))
+done
+
+//fun
+divide() {
+	echo "Params: $1 $2"
+	if [ "$2" == 0 ]; then
+		echo "Error"
+	else
+		res=$(($1/$2))
+		echo "Res: $res"
+	fi
+}
+
+divide 10 2
+divide 10 0
